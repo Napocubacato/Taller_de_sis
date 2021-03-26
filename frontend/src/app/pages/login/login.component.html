@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="container-fluid h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+
+    <div class="col-11 col-md-6 col-lg-4">
+
+      <!-- Login Form -->
+      <form [formGroup]='loginForm' class="text-center border p-5 card-form" *ngIf="loginForm">
+
+        <p class="h4 mb-4">Iniciar sesión</p>
+
+        <!-- Username -->
+        <input type="text" class="form-control mb-4" formControlName="username" placeholder="Nombre de usuario">
+
+        <!-- Password -->
+        <input type="password" class="form-control mb-4" formControlName="password" placeholder="Contraseña">
+
+
+        <div>
+          <!-- Forgot password -->
+          <a routerLink='/forgot-passwd'>¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Sign in button -->
+        <button mdbBtn color="info" [block]='true' class="my-4" (click)='login()'>Ingresar</button>
+
+        <!-- Register -->
+        <div class="text-left">
+          <p>¿No tienes cuenta?
+            <a routerLink='/register'>Crea una nueva</a>
+          </p>
+        </div>
+
+      </form>
+      <!-- Login Form -->
+    </div>
+  </div>
+</div>

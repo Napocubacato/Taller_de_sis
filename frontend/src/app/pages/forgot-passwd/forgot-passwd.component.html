@@ -1,1 +1,33 @@
-<p>forgot-passwd works!</p>
+<div class="container-fluid h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+
+    <div class="col-11 col-md-6 col-lg-4">
+      <!-- Forgot pass form -->
+      <form class="text-center border p-5 card-form">
+
+        <p class="h4 mb-4">Recuperar contraseña</p>
+
+        <!-- Email -->
+        <input type="email" class="form-control mb-4" placeholder="Correo electrónico">
+
+        <div>
+          <p>Se te enviará una contraseña temporal a tu correo electrónico.</p>
+        </div>
+
+
+        <!-- Send email button -->
+        <button mdbBtn color="warning" [block]='true' class="my-4" type="submit">Enviar</button>
+
+        <!-- Register -->
+
+        <div class="text-left">
+          <p>
+            <a routerLink='/login'>Volver al inicio de sesión</a>
+          </p>
+        </div>
+
+      </form>
+      <!-- Forgot pass form -->
+    </div>
+  </div>
+</div>

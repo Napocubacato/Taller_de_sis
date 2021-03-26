@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="container-fluid h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+
+
+    <div class="col-11 col-md-6 col-lg-4">
+      <!-- Register form -->
+      <form class="text-center border p-5 card-form">
+
+        <p class="h4 mb-4">Registro</p>
+
+        <div class="text-left">
+          <p>Ingresa los datos de la cuenta nueva</p>
+        </div>
+
+        <!-- Username -->
+        <input type="text" class="form-control mb-4" placeholder="Nombre de usuario">
+
+        <!-- Email -->
+        <input type="email" class="form-control mb-4" placeholder="Correo electrónico">
+
+        <!-- Password -->
+        <input type="password" class="form-control mb-4" placeholder="Contraseña">
+
+        <!-- Password confirmation -->
+        <input type="password" class="form-control mb-4" placeholder="Confirma tu contraseña">
+
+
+        <!-- Register button -->
+        <button mdbBtn color="success" [block]='true' class="my-4" type="submit">Crear nueva cuenta</button>
+
+        <!-- Register -->
+
+        <div class="text-left">
+          <p>¿Ya tienes una cuenta?
+            <a routerLink='/login'>Inicia sesión</a>
+          </p>
+        </div>
+
+      </form>
+      <!-- Register form -->
+    </div>
+  </div>
+</div>
