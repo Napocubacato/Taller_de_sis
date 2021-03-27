@@ -6,4 +6,5 @@ export class User {
   username: string;
   birthdate: Date;
   token: string;
+  category: string;
 }

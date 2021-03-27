@@ -17,6 +17,7 @@ import { AlertService } from './services/alert.service';
   providers: [
     AuthService,
     AlertService
-  ]
+  ],
+  exports: [AlertComponent]
 })
 export class CoreModule { }

@@ -35,25 +35,27 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (!this.loginForm || this.loginForm.invalid) return;
-this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
+    this.submitted = true;
 
-        this.loading = true;
-        this.authService.login(this.f.username.value, this.f.password.value)
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    // get return url from query parameters or default to home page
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigateByUrl(returnUrl);
-                },
-                error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                }
-            });
+    // reset alerts on submit
+    this.alertService.clear();
+
+    this.loading = true;
+    this.authService.login(this.f.username.value, this.f.password.value)
+        .pipe(first())
+        .subscribe({
+            next: () => {
+                const user = this.authService.userValue;
+                // get return url from query parameters or default to home page
+                const returnUrl = this.route.snapshot.queryParams['returnUrl'] || user.category;
+                this.router.navigateByUrl(returnUrl);
+            },
+            error: error => {
+                this.alertService.error(error);
+                this.loading = false;
+            }
+        });
   }
 
 }
